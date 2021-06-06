@@ -1,19 +1,13 @@
-#                Arduino-ThingSpeak监测站
+#                Arduino-ThingSpeak monitoring Station
 
-## 一、概述
+## 1、Overview
 
-​		本项目使用adrduino单片机配合eps8266-01模块实现联网并登录ThingSpeak云平台展示数据。主要实现功能，家用小型监测站，适用地点：厨房、阳台、卫生间等易发生火灾的地方；使用dth11温湿度监测模块监测温湿度，在Thing Speak平台以实时折线图的方式展示；此外使用烟雾传感器配合两个LED灯（绿色，红色）、蜂鸣器，当烟雾正常时，绿灯亮起；当烟雾超过警戒值，LED红色亮起，蜂鸣器… -- …发出警报，同样的，Thing Speak平台会使用折线图（扇形图）实时展示烟雾浓度变化。
-
-## 二、展示部分
-
-![截屏2021-04-29 下午8.47.35](/Users/bigbossyifi/Desktop/截图文件暂存/截屏2021-04-29 下午8.47.35.png)
+​		In this project, ADRDUINO microcontroller and EPS8266-01 module were used to network and log in ThingSpeak cloud platform to display data. Main functions, small household monitoring station, suitable for: kitchen, balcony, toilet and other places prone to fire; DTH11 temperature and humidity monitoring module was used to monitor temperature and humidity, which was displayed in the form of real-time line chart on Thing Speak platform. In addition, the smoke sensor is used with two LED lights (green, red) and a buzzer. When the smoke is normal, the green light will turn on. When the smoke exceeds the warning level, the LED red lights up, and the buzzer... -... In the same way, the Thing Speak platform uses line graphs (pie charts) to show changes in smoke concentrations in real time.
 
 
+## 2、Code section
 
-
-## 三、代码部分
-
-### 温湿度代码：
+### Temperature and humidity code：
 
 ```c++
 #include <DHT12.h>
@@ -45,7 +39,7 @@ String getHumidityValue(){
 }
 ```
 
-### 烟雾监测部分代码
+### Smoke monitoring part of the code
 
 ```c++
 #include <SoftwareSerial.h> //Arduino serial interface library
@@ -91,7 +85,7 @@ false;
  }
 ```
 
-#### 网络上传部分代码
+#### Network upload part of the code
 
 ```c++
 #include <SoftwareSerial.h> //Arduino serial interface library
